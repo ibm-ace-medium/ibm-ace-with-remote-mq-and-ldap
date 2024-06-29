@@ -1,0 +1,55 @@
+version: 1
+
+dn: cn=mqadmins,dc=example,dc=com
+objectClass: groupOfNames
+objectClass: top
+cn: mqadmins
+member: cn=mqexplorer,dc=example,dc=com
+
+dn: dc=example,dc=com
+objectclass: domain
+objectclass: top
+dc: example
+
+dn: cn=mqclient,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: uidObject
+cn: mqclient
+sn: mqclient
+uid: mqclient
+userPassword:: e1NTSEF9TkY5VjVaeWh2eTFXZW9kVmhyVUxFcXViTnVVaC9RRUE3SUFVR3c9P
+ Q==
+
+dn: cn=mqldap,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: uidObject
+cn: mqldap
+sn: mqldap
+uid: mqldap
+userPassword:: e1NTSEF9OThvZmpaZ2QrcUs2aDhtd3F3K3pqUzhETmswNUtieENiUlFqS0E9P
+ Q==
+
+dn: cn=mqclients,dc=example,dc=com
+objectClass: groupOfNames
+objectClass: top
+cn: mqclients
+member: cn=mqclient,dc=example,dc=com
+
+dn: cn=mqexplorer,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: uidObject
+cn: mqexplorer
+sn: mqexplorer
+uid: mqexplorer
+userPassword:: e1NTSEF9U1lmWmsraFQ3UXE3Q3ppR0hrbFFUL1lvcTdvdXEzVEVJTGFLNEE9P
+ Q==
+

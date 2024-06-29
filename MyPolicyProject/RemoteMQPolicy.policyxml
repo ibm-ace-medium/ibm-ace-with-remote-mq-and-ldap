@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<policies>
+  <policy policyType="MQEndpoint" policyName="RemoteMQPolicy" policyTemplate="MQEndpoint">
+    <connection>CLIENT</connection>
+    <destinationQueueManagerName>QMgr01</destinationQueueManagerName>
+    <queueManagerHostname>192.0.10.20</queueManagerHostname>
+    <listenerPortNumber>1414</listenerPortNumber>
+    <channelName>CLI.MYACESERVER</channelName>
+    <CCDTUrl></CCDTUrl>
+    <securityIdentity>myMQ</securityIdentity>
+    <useSSL>false</useSSL>
+    <SSLPeerName></SSLPeerName>
+    <SSLCipherSpec></SSLCipherSpec>
+    <SSLCertificateLabel></SSLCertificateLabel>
+    <MQApplName></MQApplName>
+    <reconnectOption>default</reconnectOption>
+  </policy>
+</policies>
