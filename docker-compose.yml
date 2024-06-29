@@ -1,0 +1,42 @@
+services:
+  ldap:
+    privileged: true
+    build:
+      context: ./apache-ds/
+    image: apache-ds
+    networks:
+      admin:
+        ipv4_address: 10.0.10.10
+      discovery:
+        ipv4_address: 192.0.10.10
+  mq:
+    build:
+      context: ./mq/
+    image: rhel-mq
+    networks:
+      admin:
+        ipv4_address: 10.0.10.20
+      discovery:
+        ipv4_address: 192.0.10.20
+  ace:
+    build:
+      context: .
+      dockerfile: ./ace/Dockerfile
+    image: rhel-ace
+    networks:
+        admin:
+            ipv4_address: 10.0.10.30
+        discovery:
+            ipv4_address: 192.0.10.30
+
+networks:
+  admin:
+    ipam:
+      driver: default
+      config:
+        - subnet: "10.0.10.0/24"
+  discovery:
+    ipam:
+      driver: default
+      config:
+        - subnet: "192.0.10.0/24"
