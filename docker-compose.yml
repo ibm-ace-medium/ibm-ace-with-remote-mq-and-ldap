@@ -12,6 +12,9 @@ services:
   mq:
     build:
       context: ./mq/
+      args:
+        MQ_CLIENT_USERNAME: mqclient
+        MQ_CLIENT_PASSWORD: passw0rd
     image: rhel-mq
     networks:
       admin:
@@ -21,6 +24,9 @@ services:
   ace:
     build:
       context: .
+      args:
+        MQ_CLIENT_USERNAME: mqclient
+        MQ_CLIENT_PASSWORD: passw0rd
       dockerfile: ./ace/Dockerfile
     image: rhel-ace
     networks:
