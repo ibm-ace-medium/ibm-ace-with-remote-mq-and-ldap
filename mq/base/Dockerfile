@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM my-docker-repository/rhel-base
+FROM refactoritskibm/rhel-base
 VOLUME /home
 
 # can solve problem for creating keystore on AMD processors. https://github.com/ibm-messaging/mq-container/issues/462
@@ -28,7 +28,9 @@ RUN useradd --uid 3000 --groups mqadmins -s /bin/bash --create-home --home-dir /
 
 # The URL to download the MQ installer from in tar.gz format
 ARG MQ_FILE=9.3.5.0-IBM-MQ-Advanced-for-Developers-LinuxX64.tar.gz
-ARG MQ_URL=https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/messaging/mqadv/$MQ_FILE
+#ARG MQ_URL=https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/messaging/mqadv/$MQ_FILE
+ARG MQ_URL=http://192.168.15.12:9000/$MQ_FILE
+
 ARG MQ_PACKAGES="./MQSeriesJRE-*.x86_64.rpm ./MQSeriesRuntime-*.x86_64.rpm ./MQSeriesGSKit-*.x86_64.rpm ./MQSeriesServer-*.x86_64.rpm ./MQSeriesJava-*.x86_64.rpm ./MQSeriesSamples-*.x86_64.rpm"
 
   # Setting default shell to bash for new users \

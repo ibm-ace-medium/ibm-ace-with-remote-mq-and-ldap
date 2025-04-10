@@ -1,3 +1,3 @@
 ---
 trace: 'none'
-remoteDefaultQueueManager: '{MyPolicyProject}:RemoteMQPolicy'
+#remoteDefaultQueueManager: '{MyPolicyProject}:RemoteMQPolicy'

@@ -1,4 +1,4 @@
-FROM my-docker-repository/mq-install:9.3.5.0
+FROM refactoritskibm/mq-install:9.3.5.0
 
 ARG MQ_CLIENT_USERNAME=mqclient
 ARG MQ_CLIENT_PASSWORD=passw0rd

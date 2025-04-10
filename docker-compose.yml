@@ -3,7 +3,7 @@ services:
     privileged: true
     build:
       context: ./apache-ds/
-    image: apache-ds
+    image: ivansla/apache-ds
     networks:
       admin:
         ipv4_address: 10.0.10.10
@@ -15,7 +15,7 @@ services:
       args:
         MQ_CLIENT_USERNAME: mqclient
         MQ_CLIENT_PASSWORD: passw0rd
-    image: rhel-mq
+    image: ivansla/rhel-mq
     networks:
       admin:
         ipv4_address: 10.0.10.20
@@ -28,7 +28,7 @@ services:
         MQ_CLIENT_USERNAME: mqclient
         MQ_CLIENT_PASSWORD: passw0rd
       dockerfile: ./ace/Dockerfile
-    image: rhel-ace
+    image: ivansla/rhel-ace
     networks:
         admin:
             ipv4_address: 10.0.10.30

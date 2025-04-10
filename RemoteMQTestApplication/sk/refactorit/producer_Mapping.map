@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot xmlns="http://www.ibm.com/2008/ccl/Mapping" domainID="com.ibm.msl.mapping.xml" domainIDExtension="mb" mainMap="true" targetNamespace="sk.refactorit" version="8.0.5.0" xmlns:map="sk.refactorit">
+    <inlinedXMLSchema><![CDATA[<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="element1" nillable="true" type="xsd:string"/>
+</xsd:schema>]]></inlinedXMLSchema>
+    <input inlinedXMLSchema="true" path="../schema_0.xsd" var="var1"/>
+    <output path="jar:file://!com/ibm/etools/mft/map/xsds/predefined/JsonDomainMsg.xsd" var="var"/>
+    <generation engine="xquery"/>
+    <mappingDeclaration name="producer_Mapping">
+        <output namespace="http://www.ibm.com/iib/msl/json" path="$var/mb:msg(JSON,assembly,JSON,Properties)">
+            <cast castType="userDefined" path="JSON/Data/type('anyType')" qualifier="{http://www.ibm.com/iib/msl/json}JSONObject" ref="var"/>
+            <cast castType="userDefined" path="JSON/spath('Data',2)/any" qualifier="element1" ref="var1"/>
+        </output>
+        <assign value="Ahoj">
+            <output path="JSON/spath('Data',2)/element1"/>
+        </assign>
+    </mappingDeclaration>
+</mappingRoot>
